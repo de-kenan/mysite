@@ -3,23 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video İndirme</title>
+    <title>Giriş Sayfası</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Kendi YouTube Videonuzu İndirin</h1>
-    <label for="videoUrl">Video URL'sini girin:</label>
-    <input type="text" id="videoUrl" placeholder="YouTube video URL'si">
-    <button id="downloadBtn">İndir</button>
+    <div class="container">
+        <h1>Giriş Yap</h1>
+        <form id="loginForm">
+            <label for="username">Kullanıcı Adı:</label>
+            <input type="text" id="username" required>
+            <label for="password">Şifre:</label>
+            <input type="password" id="password" required>
+            <button type="submit">Giriş</button>
+        </form>
+    </div>
 
     <script>
-        document.getElementById('downloadBtn').addEventListener('click', function() {
-            const videoUrl = document.getElementById('videoUrl').value;
-            const link = document.createElement('a');
-            link.href = videoUrl;
-            link.download = 'my_video.mp4'; // İndirme adı
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Formun varsayılan davranışını engelle
+            // Burada kullanıcı adı ve şifre kontrolü yapabilirsiniz
+            // Örnek olarak, kullanıcıyı başka bir sayfaya yönlendiriyoruz
+            window.location.href = 'dashboard.html'; // Yönlendirmek istediğiniz sayfanın adı
         });
     </script>
 </body>
