@@ -1,34 +1,42 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     margin: 0;
-}
-
-.container {
+    padding: 20px;
     text-align: center;
 }
 
-.download-button {
-    display: inline-block;
-    padding: 15px 30px;
-    font-size: 18px;
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #28a745;
     color: white;
-    background-color: #007bff;
     border: none;
     border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s, transform 0.3s;
+    cursor: pointer;
 }
 
-.download-button:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-}
-
-.download-button:active {
-    transform: scale(0.95);
+button:hover {
+    background-color: #218838;
 }
