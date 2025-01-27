@@ -3,13 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dosya İndirme</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Video İndirme</title>
 </head>
 <body>
-    <div class="container">
-        <h1>maked by kenan,</h1>
-        <a href="Portable-VirtualBox.exe" class="download-button" download>Dosyayı İndir</a>
-    </div>
+    <h1>Kendi YouTube Videonuzu İndirin</h1>
+    <label for="videoUrl">Video URL'sini girin:</label>
+    <input type="text" id="videoUrl" placeholder="YouTube video URL'si">
+    <button id="downloadBtn">İndir</button>
+
+    <script>
+        document.getElementById('downloadBtn').addEventListener('click', function() {
+            const videoUrl = document.getElementById('videoUrl').value;
+            const link = document.createElement('a');
+            link.href = videoUrl;
+            link.download = 'my_video.mp4'; // İndirme adı
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    </script>
 </body>
 </html>
